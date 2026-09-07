@@ -10,7 +10,7 @@ resource "terraform_data" "deploy_frontend" {
  environment = var.environment
  }
  provisioner "local-exec" {
- command = "rm -rf ../staging && mkdir -p ../staging && cp -r ../frontend/dist/frontend/browser/. ../staging/"
+ command = "rm -rf ../staging && mkdir -p ../staging && cp -r ../frontend/dist/frontend-routing/* ../staging/"
  }
 }
 output "deployment_path" {
